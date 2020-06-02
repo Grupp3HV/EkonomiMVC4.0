@@ -1,0 +1,37 @@
+﻿@model EkonomiMVC4._0.Models.LoginModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<html>
+<head>
+    <link href="~/Content/Site.css" rel="stylesheet" /></head>
+<body>
+    
+    <div class="login-form">
+        <h2>Logga in</h2>
+        @using (Html.BeginForm())
+        {
+      
+            <div>Användarnamn:</div>
+            <div class="input-places">@Html.EditorFor(m => m.AnvandarNamn)</div>
+            <br />
+           <div>Lösenord:</div>
+            <div class="input-places">@Html.PasswordFor(m => m.Losenord)</div>
+
+
+                <br />
+                <input type="submit" value="Logga in" />
+                <div>
+                    @Html.ValidationSummary()
+                </div>
+              
+        }
+
+    </div>
+</body>
+</html>
+
+
+
+

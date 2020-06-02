@@ -1,0 +1,98 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+} 
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+.navbar-inverse {
+    background-color: maroon !important;
+   
+}
+.navbar-brand a {
+    font-size: 10px !important;
+}
+.navbar-brand a:hover {
+        color: black;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white !important;
+}
+.Login {
+    position: absolute;
+    right: 10px;
+    
+}
+.nav{
+    position:absolute;
+    left: 10px;
+}
+.login-form {
+    background-color: white;
+    width: 30%;
+    margin: auto;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 5px solid maroon;
+    padding: 30px;
+    border-radius: 25px;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: maroon;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    align-self: center;
+}
+.titel{
+    text-align:center;
+}
+.textbox {
+    width: 200px;
+    float: left;
+    text-align: left
+}
+
+.textbox [type=text] {
+    width: 200px;
+    float: left;
+}
+body, html {
+    height: 100%;
+}
+
+.bg {
+    height: 30%;
+    width: 78.8%;
+   
+    background-position:center center;
+}
+.Centers{
+    text-align:center;
+}
+   

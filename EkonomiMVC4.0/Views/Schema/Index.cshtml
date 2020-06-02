@@ -1,0 +1,96 @@
+﻿@using EkonomiMVC4._0.Models
+@model ViewModel
+@{ 
+    ViewBag.Title = "personalschema";
+}
+
+<h2>Personalschema</h2>
+
+<p>
+    <a href="@Url.Action("SkapaLrUppdatera", "Schema")">Skapa ny</a>
+
+</p>
+<table class="table">
+    <tr>
+         <th>@Html.DisplayNameFor(model => model.Namn)</th>
+        <th>@Html.DisplayNameFor(model => model.Efternamn)</th>
+        <th>@Html.DisplayNameFor(model => model.Roll)</th>
+
+        <th>@Html.DisplayNameFor(model => model.Måndag)</th>
+
+    
+        <th>@Html.DisplayNameFor(model => model.Tisdag)</th>
+  
+
+        <th>@Html.DisplayNameFor(model => model.Onsdag)</th>
+ 
+
+        <th>@Html.DisplayNameFor(model => model.Torsdag)</th>
+ 
+   
+        <th>@Html.DisplayNameFor(model => model.Fredag)</th>
+   
+    
+        <th>@Html.DisplayNameFor(model => model.Lördag)</th>
+    
+   
+        <th>@Html.DisplayNameFor(model => model.Söndag)</th>
+
+    </tr>
+
+@foreach (var item in Model.schema) {
+
+    foreach (var pers in Model.personal)
+    {
+        if (item.Id == 1 && pers.Id == 1|| item.Id == 3 && pers.Id == 2 || item.Id == 10 && pers.Id == 3 || item.Id == 11 && pers.Id == 5 || item.Id == 12 && pers.Id == 6 || item.Id == 13 && pers.Id == 7 || item.Id == 14 && pers.Id == 8 || item.Id == 15 && pers.Id == 9 || item.Id == 16 && pers.Id == 12 || item.Id == 17 && pers.Id == 13 || item.Id == 18 && pers.Id == 35 || item.Id == 19 && pers.Id == 36 || item.Id == 20 && pers.Id == 36 || item.Id == 20 && pers.Id == 37)
+        {
+    <tr>
+        <td>@pers.Namn</td>
+
+
+        <td>@pers.Efternamn</td>
+
+
+        <td>@pers.Roll</td>
+
+    
+        <td>
+            @Html.DisplayFor(modelItem => item.Måndag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tisdag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Onsdag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Torsdag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fredag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lördag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Söndag)
+        </td>
+        <td>
+            <a href="@Url.Action("SkapaLrUppdatera", "Schema", new { id = item.Id })">Uppdatera</a>
+            <a href="@Url.Action("Radera", "Schema", new { id = item.Id })">Radera</a>
+
+           
+          
+        </td>
+    </tr>
+        }
+       
+    }
+}
+
+
+
+
+
+
+</table>

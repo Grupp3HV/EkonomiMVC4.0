@@ -1,0 +1,53 @@
+﻿@using EkonomiMVC4._0.Models
+@model ViewModel2
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Statistik för biografen</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+           Filmtitel
+        </th>
+
+        <th>
+            Bokadeplatser
+        </th>
+    
+        <th>
+           Salongnamn
+        </th>
+    </tr>
+
+@foreach (var film in Model.film)
+{
+
+    foreach (var platser in Model.platser)
+    {
+        if (film.Id == platser.VisningsSchemaId)
+
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => film.FilmTitel)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => platser.AntalBokadePlatser)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => film.SalongsNamn)
+                </td>
+            </tr>
+        }
+
+    }
+
+
+
+}
+
+</table>

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<EkonomiMVC4._0.Models.KampanjClass>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Kampanjkoder</h2>
+
+<p>
+    <a href="@Url.Action("SUkampanj","Kampanj")">Skapa ny </a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VardeKod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bonuspoang)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDatum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SlutDatum)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VardeKod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bonuspoang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StartDatum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SlutDatum)
+        </td>
+        <td>
+            <a href="@Url.Action("SUkampanj","Kampanj", new { id=item.Id })">Uppdatera</a> |
+            <a href="@Url.Action("Radera","Kampanj" , new { id=item.Id })">Radera</a>
+        </td>
+    </tr>
+}
+
+</table>

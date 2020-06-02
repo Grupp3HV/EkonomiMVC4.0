@@ -1,0 +1,54 @@
+﻿@model EkonomiMVC4._0.Models.schemaModel
+
+@{
+    ViewBag.Title = "SkapaLrUppdatera";
+}
+
+<h2 class="titel">Skapa eller uppdater personalscheman</h2>
+<br />
+<div class="login-form">
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="textbox">
+            @Html.LabelFor(model => model.Måndag)
+            @Html.EditorFor(model => model.Måndag)
+            @Html.ValidationMessageFor(model => model.Måndag)
+        </div>
+        <div class="textbox">
+            @Html.LabelFor(model => model.Tisdag)
+            @Html.EditorFor(model => model.Tisdag)
+            @Html.ValidationMessageFor(model => model.Tisdag)
+        </div>
+        <div class="textbox">
+            @Html.LabelFor(model => model.Onsdag)
+            @Html.EditorFor(model => model.Onsdag)
+            @Html.ValidationMessageFor(model => model.Onsdag)
+        </div>
+        <div class="textbox">
+            @Html.LabelFor(model => model.Torsdag)
+            @Html.EditorFor(model => model.Torsdag)
+            @Html.ValidationMessageFor(model => model.Torsdag)
+        </div>
+        <div class="textbox">
+            @Html.LabelFor(model => model.Fredag)
+            @Html.EditorFor(model => model.Fredag)
+            @Html.ValidationMessageFor(model => model.Fredag)
+        </div>
+        <div class="textbox">
+            @Html.LabelFor(model => model.Lördag)
+            @Html.EditorFor(model => model.Lördag)
+            @Html.ValidationMessageFor(model => model.Lördag)
+        </div>
+        <div class="textbox">
+            @Html.LabelFor(model => model.Söndag)
+            @Html.EditorFor(model => model.Söndag)
+            @Html.ValidationMessageFor(model => model.Söndag)
+        </div>
+        <div>
+            <input type="submit" value="Submit" class="btn button" />
+            <input type="reset" value="Reset" class="btn button"/>
+        </div>
+    }
+</div>

@@ -1,0 +1,39 @@
+﻿@model EkonomiMVC4._0.Models.KampanjClass
+@{
+    ViewBag.Title = "SUkampanj";
+}
+
+<h2 class="titel">Skapa och uppdatera</h2>
+<br />
+<div class="login-form">
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model=>model.Id)
+
+        <div>
+            @Html.LabelFor(model=>model.VardeKod)<br />
+            
+            @Html.EditorFor(model => model.VardeKod)
+            @Html.ValidationMessageFor(model => model.VardeKod)
+        </div>
+        <div class="textbox">
+            @Html.LabelFor(model => model.Bonuspoang)
+            @Html.EditorFor(model => model.Bonuspoang)
+            @Html.ValidationMessageFor(model => model.Bonuspoang)
+        </div>
+        <div class="textbox">
+            @Html.LabelFor(model => model.StartDatum)
+            @Html.EditorFor(model => model.StartDatum)
+            @Html.ValidationMessageFor(model => model.StartDatum)
+        </div>
+        <div class="textbox">
+            @Html.LabelFor(model => model.SlutDatum)
+            @Html.EditorFor(model => model.SlutDatum)
+            @Html.ValidationMessageFor(model => model.SlutDatum)
+        </div>
+        <div>
+           <input type="submit" value="Bekräfta"/>
+            <input type="reset" value="Rensa"/>
+        </div>
+    }
+</div>
